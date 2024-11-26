@@ -117,12 +117,6 @@ class CustomerResource extends Resource
                     ->options([
                         'available' => 'Available',
                         'cancelled' => 'Cancelled',
-                    ]),
-
-                SelectFilter::make('status')
-                    ->options([
-                        'hi',
-                        'hello'
                     ])
             ])
             ->actions([
