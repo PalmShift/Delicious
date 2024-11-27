@@ -3,9 +3,9 @@ session_start();
 
 // Database connection details
 $host = 'localhost'; // Replace with your database host
-$dbname = 'finalproj'; // Replace with your database name
-$username = 'root'; // Replace with your database username
-$password = ''; // Replace with your database password
+$dbname = 'u879180223_finalproj'; // Replace with your database name
+$username = 'u879180223_root'; // Replace with your database username
+$password = '?V8WRn0d0Yau'; // Replace with your database password
 
 // Create a connection
 try {
