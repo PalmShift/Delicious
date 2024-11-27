@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Exports\CustomerExporter;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Tables\Filters\SelectFilter;
 use App\Filament\Resources\CustomerResource\Pages;
@@ -28,7 +29,9 @@ use Filament\Forms\Components\RichEditor;
 use Illuminate\Support\Facades\Mail;
 use Filament\Infolists\Infolist;
 use Filament\Tables\Columns\TextColumn;
-
+use App\Filament\Exports\ProductExporter;
+use Filament\Tables\Actions\ExportAction;
+use Filament\Tables\Actions\ExportBulkAction;
 
 class CustomerResource extends Resource
 {
@@ -123,10 +126,22 @@ class CustomerResource extends Resource
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\ViewAction::make(),
                 DeleteAction::make(),
+                ExportAction::make()
+                    ->exporter(CustomerExporter::class)
+
             ])
+
+            ->headerActions([
+                ExportAction::make()
+                    ->exporter(CustomerExporter::class)
+            ])
+
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
+
+                    ExportBulkAction::make()
+                    ->exporter(CustomerExporter::class)
                 ]),
             ]);
     }
