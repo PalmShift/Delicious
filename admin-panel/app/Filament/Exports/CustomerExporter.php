@@ -27,8 +27,6 @@ class CustomerExporter extends Exporter
             ExportColumn::make('table_number'),
         ];
     }
-
-    #test123
     public static function getCompletedNotificationBody(Export $export): string
     {
         $body = 'Your customer export has completed and ' . number_format($export->successful_rows) . ' ' . str('row')->plural($export->successful_rows) . ' exported.';

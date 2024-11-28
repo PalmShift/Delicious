@@ -23,7 +23,7 @@ class CustomerChart extends ChartWidget
             ->perMonth()
             ->count();
 
-
+#this is a test
         return [
             'datasets' => [
                 [
