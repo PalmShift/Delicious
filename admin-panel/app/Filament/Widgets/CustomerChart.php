@@ -23,7 +23,7 @@ class CustomerChart extends ChartWidget
             ->dateColumn('date')
             ->perMonth()
             ->count();
-            \Log::info($data->toArray());
+
 
         return [
             'datasets' => [
