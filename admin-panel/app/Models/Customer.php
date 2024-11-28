@@ -16,7 +16,7 @@ class Customer extends Model
         'contact',
         'date',
         'time',
-        'npeople', // 'number of people' field, if applicable
+        'npeople',
         'message',
         'status'
     ];
