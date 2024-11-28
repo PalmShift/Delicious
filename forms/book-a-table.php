@@ -57,35 +57,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-// Check if the date is passed in the request
-if (isset($_POST['date'])) {
-    $selectedDate = $_POST['date']; // Date passed from the frontend
+<?php
+// Assuming the available time slots are stored in an array
+$timeSlots = [
+    '10:00:00',
+    '11:00:00',
+    '12:00:00',
+    '13:00:00',
+    '14:00:00',
+    '15:00:00',
+    '16:00:00',
+    '17:00:00',
+    '18:00:00',
+    '19:00:00',
+    '20:00:00'
+];
 
-    // Define time slots for the restaurant
-    $timeSlots = [
-        '10:00:00',
-        '11:00:00',
-        '12:00:00',
-        '13:00:00',
-        '14:00:00',
-        '15:00:00',
-        '16:00:00',
-        '17:00:00',
-        '18:00:00',
-        '19:00:00',
-        '20:00:00'
-    ];
-
-    // Assume $pdo is your database connection
-    $stmt = $pdo->prepare("SELECT time FROM customers WHERE date = :date AND status = 'Booked'");
-    $stmt->bindParam(':date', $selectedDate);
-    $stmt->execute();
-
-    $bookedTimes = $stmt->fetchAll(PDO::FETCH_COLUMN);
-
-    // Filter out the booked times
-    $availableTimes = array_diff($timeSlots, $bookedTimes);
-
-    // Return available times as JSON
-    header('Content-Type: application/json');
+// Optionally, check if the form has been submitted to process the selected time
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $selectedTime = $_POST['time'];
+    echo "You have selected the time slot: " . $selectedTime;
 }
+?>
+

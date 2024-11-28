@@ -3,9 +3,9 @@ session_start();
 
 // Database connection details
 $host = 'localhost';
-$dbname = 'finalproj';
-$username = 'root';
-$password = '';
+$dbname = 'u879180223_finalproj';
+$username = 'u879180223_root';
+$password = '2iE$w57Xzbv3+4e]qKvF';
 
 // Create a connection
 try {
