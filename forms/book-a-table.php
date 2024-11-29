@@ -35,10 +35,7 @@ $timeSlots = [
 ];
 
 // Optionally, check if the form has been submitted to process the selected time
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $selectedTime = $_POST['time'];
-    echo "You have selected the time slot: " . $selectedTime;
-}
+
 
 
 // Check if the form is submitted
