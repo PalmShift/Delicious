@@ -6,7 +6,7 @@ session_start();
 
 // Database connection details
 $host = 'localhost';
-$dbname = 'DB_DATABASE=u879180223_finalproj';
+$dbname = 'u879180223_finalproj';
 $username = 'u879180223_root';
 $password = '2iE$w57Xzbv3+4e]qKvF';
 
